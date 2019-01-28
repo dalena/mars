@@ -1,5 +1,5 @@
 ---
-Description: DMA's Media Arts Research Space
+Description: Media Arts Research Space
 Form: https://api.formbucket.com/f/buk_JUzic5YM0OlLvGRe1viZoE5O
 # Social:
 #   http://tn.linkedin.com/in/MohamedSafouanBesrour: linkedin

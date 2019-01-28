@@ -1,100 +1,110 @@
 ﻿<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<title>{{ site_title }}</title>
-		<link rel="stylesheet" href="{{ theme_url }}/assets/css/main.css" />
-		<link type="text/css" rel="stylesheet" href="///fast.fonts.net/cssapi/2c30dd06-0d07-4fe1-8125-9a59a81a1d69.css">
-		<!--[if lte IE 9]><link rel="stylesheet" href="{{ theme_url }}/assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="{{ theme_url }}/assets/css/noscript.css" /></noscript>
-	</head>
-	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>{{ site_title }}</title>
+	<link rel="stylesheet" href="{{ theme_url }}/assets/css/main.css" />
+	<link rel='stylesheet' href='{{ theme_url }}/assets/css/fullcalendar.css' />
+	<link type="text/css" rel="stylesheet" href="///fast.fonts.net/cssapi/2c30dd06-0d07-4fe1-8125-9a59a81a1d69.css">
+	<!--[if lte IE 9]><link rel="stylesheet" href="{{ theme_url }}/assets/css/ie9.css" /><![endif]-->
+	<noscript>
+		<link rel="stylesheet" href="{{ theme_url }}/assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<img src="images/header_blue.svg">
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>{{ site_title }}</h1>
-								<p>{{ meta.description }}</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-							{% for page in pages|sort_by([ 'meta', 'nav' ]) %}
-								{% if page.meta.template == "single" %}
-								<li><a href="#{{ page.id }}">{{ page.title }}</a></li>
-								{% endif %}
-							{% endfor %}
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
+<body>
 
-				<!-- Main -->
-					<div id="main">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<img src="images/header_blue.svg">
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1>{{ site_title }}</h1>
+					<p>{{ meta.description }}</p>
+				</div>
+			</div>
+			<nav>
+				<ul>
 					{% for page in pages|sort_by([ 'meta', 'nav' ]) %}
-						{% if page.meta.template == "single" %}
-						<!-- Intro -->
-							<article id="{{ page.id }}">
-								<h2 class="major">{{ page.title }}</h2>
-								<span class="image main"><img src="{{ page.meta.image }}" alt="{{ page.title }}" /></span>
-								<p>{{ page.id|content }}</p>
-							</article>
-						{% endif %}
+					{% if page.meta.template == "single" %}
+					<li><a href="#{{ page.id }}">{{ page.title }}</a></li>
+					{% endif %}
 					{% endfor %}
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="{{ meta.form }}">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-								{% for link,icon in meta.social %}
-									<li><a href="{{ link }}" class="icon fa-{{ icon }}"><span class="label">{{ icon }}</span></a></li>
-								{% endfor %}
-								</ul>
-							</article>
+		<!-- Main -->
+		<div id="main">
+			{% for page in pages|sort_by([ 'meta', 'nav' ]) %}
+			{% if page.meta.template == "single" %}
+			<!-- Intro -->
+			<article id="{{ page.id }}">
+				<h2 class="major">{{ page.title }}</h2>
+				<span class="image main"><img src="{{ page.meta.image }}" alt="{{ page.title }}" /></span>
+				<p>{{ page.id|content }}</p>
+			</article>
+			{% endif %}
+			{% endfor %}
+
+			<!-- Contact -->
+			<article id="contact">
+				<h2 class="major">Contact</h2>
+				<form method="post" action="{{ meta.form }}">
+					<div class="field half first">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="field half">
+						<label for="email">Email</label>
+						<input type="text" name="email" id="email" />
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; {{ site_title }} bitchez</p>
-					</footer>
+					<div class="field">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" rows="4"></textarea>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Send Message" class="special" /></li>
+						<li><input type="reset" value="Reset" /></li>
+					</ul>
+				</form>
+				<ul class="icons">
+					{% for link,icon in meta.social %}
+					<li><a href="{{ link }}" class="icon fa-{{ icon }}"><span class="label">{{ icon }}</span></a></li>
+					{% endfor %}
+				</ul>
+			</article>
+		</div>
 
-			</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; {{ site_title }} bitchez</p>
+		</footer>
 
-		<!-- BG -->
-			<div id="bg"></div>
+	</div>
 
-		<!-- Scripts -->
-			<script src="{{ theme_url }}/assets/js/jquery.min.js"></script>
-			<script src="{{ theme_url }}/assets/js/skel.min.js"></script>
-			<script src="{{ theme_url }}/assets/js/util.js"></script>
-			<script src="{{ theme_url }}/assets/js/main.js"></script>
+	<!-- BG -->
+	<div id="bg"></div>
 
-	</body>
+	<!-- Scripts -->
+	<script src="{{ theme_url }}/assets/js/jquery.min.js"></script>
+	<script src="{{ theme_url }}/assets/js/skel.min.js"></script>
+	<script src="{{ theme_url }}/assets/js/util.js"></script>
+	<script src="{{ theme_url }}/assets/js/main.js"></script>
+	<script src='{{ theme_url }}/assets/js/jquery.min.js'></script>
+	<script src='{{ theme_url }}/assets/js/moment.min.js'></script>
+	<script src='{{ theme_url }}/assets/js/fullcalendar.js'></script>
+	<script src='{{ theme_url }}/assets/js/gcal.js'></script>
+	<script src='{{ theme_url }}/assets/js/marscalendar.js'></script>
+
+</body>
+
 </html>
