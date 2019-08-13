@@ -162,9 +162,6 @@ body {
 
 }
 
-body {
-	background: #fff;
-}
 
 body.is-loading *,
 body.is-loading *:before,
@@ -190,6 +187,11 @@ body.is-switching *:after {
 
 html {
 	font-size: 16pt;
+	background-color: rgb(245, 245, 248) !important;
+	background: url('../img/bg.svg') no-repeat 65vw 30vh fixed;
+	background-size: contain;
+	overflow-x: hidden;
+
 }
 
 @media screen and (max-width: 1680px) {
