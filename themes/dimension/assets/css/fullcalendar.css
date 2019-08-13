@@ -597,8 +597,8 @@ tr:first-child>td>.fc-day-grid-event {
 
 .fc-day-grid-event .fc-content {
   /* force events to be one-line tall */
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal !important;
+  /* overflow: hidden; */
 }
 
 .fc-day-grid-event .fc-time {
@@ -1526,4 +1526,12 @@ be a descendant of the grid when it is being dragged.
 
 #calendar thead {
   border: none !important;
+}
+
+.fc-scroller.fc-day-grid-container {
+  height: 100% !important;
+}
+
+.fc-unthemed .fc-content {
+  font-size: .7rem !important;
 }

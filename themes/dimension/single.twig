@@ -1,42 +1,48 @@
 ﻿<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<title>{{ meta.title }} | {{ site_title }}</title>
-		<link rel="stylesheet" href="{{ theme_url }}/assets/css/main.css" />
-		<link rel='stylesheet' href='{{ theme_url }}/assets/css/fullcalendar.css' />
-		<!--[if lte IE 9]><link rel="stylesheet" href="{{ theme_url }}/assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="{{ theme_url }}/assets/css/noscript.css" /></noscript>
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+        <title>{{ meta.title }}
+            |
+            {{ site_title }}</title>
+        <link rel="stylesheet" href="{{ theme_url }}/assets/css/main.css"/>
+        <link rel='stylesheet' href='{{ theme_url }}/assets/css/fullcalendar.css'/>
+        <link
+        rel='stylesheet' media='print' href='{{ theme_url }}/assets/css/fullcalendar.print.css'/>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<article>
-					<h2 class="major">{{ meta.title }}</h2>
-					<span class="image main"><img src="{{ meta.image }}" alt="{{ meta.title }}" /></span>
-					<p>{{ content }}</p>
-				</article>
-			
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; {{ site_title }} Bitchez/p>
-					</footer>
-			</div>
-		<!-- BG -->
-			<div id="bg"></div>
+        <!--[if lte IE 9]><link rel="stylesheet" href="{{ theme_url }}/assets/css/ie9.css" /><![endif]-->
+        <noscript><link rel="stylesheet" href="{{ theme_url }}/assets/css/noscript.css"/></noscript>
+    </head>
+    <body>
 
-		<!-- Scripts -->
-			<script src="{{ theme_url }}/assets/js/jquery.min.js"></script>
-			<script src="{{ theme_url }}/assets/js/skel.min.js"></script>
-			<script src="{{ theme_url }}/assets/js/util.js"></script>
-			<script src="{{ theme_url }}/assets/js/main.js"></script>
-			<script src='{{ theme_url }}/assets/js/jquery.min.js'></script>
-			<script src='{{ theme_url }}/assets/js/moment.min.js'></script>
-			<script src='{{ theme_url }}/assets/js/fullcalendar.js'></script>
-			<script src='{{ theme_url }}/assets/js/gcal.js'></script>
-			<script src='{{ theme_url }}/assets/js/marscalendar.js'></script>
+        <!-- Wrapper -->
+        <div id="wrapper">
+            <article>
+                <h2 class="major">{{ meta.title }}</h2>
+                <p>{{ content }}</p>
+            </article>
 
-	</body>
+            <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">&copy;
+                    {{ site_title }}Bitchez/p>
+                </p>
+            </footer>
+        </div>
+        <!-- BG -->
+        <div id="bg"></div>
+
+        <!-- Scripts -->
+        <script src="{{ theme_url }}/assets/js/jquery.min.js"></script>
+        <script src="{{ theme_url }}/assets/js/skel.min.js"></script>
+        <script src="{{ theme_url }}/assets/js/util.js"></script>
+        <script src="{{ theme_url }}/assets/js/main.js"></script>
+        <script src='{{ theme_url }}/assets/js/moment.min.js'></script>
+        <script src='{{ theme_url }}/assets/js/fullcalendar.js'></script>
+        <script src='{{ theme_url }}/assets/js/gcal.js'></script>
+        <script src='{{ theme_url }}/assets/js/marscalendar.js'></script>
+
+
+    </body>
 </html>
